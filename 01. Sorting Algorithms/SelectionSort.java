@@ -11,7 +11,7 @@ public class SelectionSort {
         }
     }
 
-    public void swap(int[] nums, int first, int second){
+    private void swap(int[] nums, int first, int second){
         var temp = nums[first];
         nums[first] = nums[second];
         nums[second] = temp;

@@ -22,7 +22,7 @@ public class MargeSort {
         marge(left, right, array);
     }
 
-    public void marge(int[] left, int[] right, int[] result){
+    private void marge(int[] left, int[] right, int[] result){
         int i = 0, j = 0, k = 0;
 
         while(i < left.length && j < right.length){
