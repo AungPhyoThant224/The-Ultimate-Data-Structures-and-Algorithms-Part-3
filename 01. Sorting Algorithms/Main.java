@@ -12,9 +12,15 @@ public class Main{
         // SelectionSort sort = new SelectionSort();
         // sort.SelectionSort(nums);
 
-        InsertionSort sort = new InsertionSort();
-        sort.insertionSort(nums);
+        // InsertionSort sort = new InsertionSort();
+        // sort.insertionSort(nums);
+
+        MargeSort sort = new MargeSort();
+        sort.margeSort(nums);
 
         System.out.println(Arrays.toString(nums));
+
+        // Expression exp = new Expression();
+        // System.out.println(exp.isBalance("{[](1 + 2) + <2>}"));
     }
 }
