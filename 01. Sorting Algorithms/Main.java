@@ -9,8 +9,11 @@ public class Main{
         // BubbleSort sort = new BubbleSort();
         // sort.bubbleSort(nums);
 
-        SelectionSort sort = new SelectionSort();
-        sort.SelectionSort(nums);
+        // SelectionSort sort = new SelectionSort();
+        // sort.SelectionSort(nums);
+
+        InsertionSort sort = new InsertionSort();
+        sort.insertionSort(nums);
 
         System.out.println(Arrays.toString(nums));
     }
