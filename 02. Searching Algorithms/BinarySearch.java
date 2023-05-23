@@ -25,4 +25,22 @@ public class BinarySearch {
         return binarySearchRe(arr, target, middle + 1, arr.length - 1);
     }
 
+    public int binarySearchIte(int[] arr, int target){
+        
+        var left = 0;
+        var right = arr.length -1;
+        while(right >= left){
+            var middle = (left + right) / 2;
+            if(arr[middle] == target){
+                return middle;
+            }
+            if(arr[middle] > target){
+                right = middle -1;
+            }
+            if(arr[middle] < target){
+                left = middle + 1;
+            }
+        }
+        return -1;
+    }
 }

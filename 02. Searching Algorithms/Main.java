@@ -7,6 +7,7 @@ public class Main{
         // System.out.println(search.linearSearch(nums, 5));
 
         BinarySearch search = new BinarySearch();
-        System.out.println(search.binarySearchRe(nums, 1));
+        // System.out.println(search.binarySearchRe(nums, 1));
+        System.out.println(search.binarySearchIte(nums, 5));
     }
 }
