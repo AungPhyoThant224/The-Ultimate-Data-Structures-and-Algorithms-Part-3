@@ -4,11 +4,17 @@ public class BubbleSort {
     
     // -------------Mosh Solution---------------
     public void bubbleSort(int[] array){
+        boolean isSorted;
         for(int i = 0; i < array.length; i++){
-            for(int j = 1; j < array.length; j++){
+            isSorted = true;
+            for(int j = 1; j < array.length - i; j++){
                 if(array[i] < array[j -1]){
                     swap(array, j, j-1);
+                    isSorted = false;
                 }
+            }
+            if(isSorted){
+                return;
             }
         }
     }
