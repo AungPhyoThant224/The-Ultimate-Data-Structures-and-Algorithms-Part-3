@@ -62,25 +62,33 @@ public class Exercises {
     }
 
     // -------------------4------------------
+    // public boolean rotationOfAnother(String str1, String str2){
+    //     if(str1.length() != str2.length()){
+    //         return false;
+    //     }
+    //     char[] chars1 = str1.toCharArray();
+    //     int comparePoint = str2.indexOf(chars1[0]);
+    //     char[] chars2 = str2.toCharArray();
+
+    //     for(int i = 0; i < chars1.length; i++){
+    //         if(chars1[i] != chars2[comparePoint]){
+    //             return false;
+    //         }
+    //         comparePoint++;
+    //         if(comparePoint == chars2.length){
+    //             comparePoint = 0;
+    //         }
+    //     }
+        
+    //     return true;
+    // }
+
+    //Mosh Solution
     public boolean rotationOfAnother(String str1, String str2){
-        if(str1.length() != str2.length()){
+        if(str1 == null || str2 == null){
             return false;
         }
-        char[] chars1 = str1.toCharArray();
-        int comparePoint = str2.indexOf(chars1[0]);
-        char[] chars2 = str2.toCharArray();
-
-        for(int i = 0; i < chars1.length; i++){
-            if(chars1[i] != chars2[comparePoint]){
-                return false;
-            }
-            comparePoint++;
-            if(comparePoint == chars2.length){
-                comparePoint = 0;
-            }
-        }
-        
-        return true;
+        return str1.length() == str2.length() && (str1 + str1).contains(str2);
     }
 
     // ------------------5-----------------
