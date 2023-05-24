@@ -49,6 +49,9 @@ public class Exercises {
 
     // -------------------4------------------
     public boolean rotationOfAnother(String str1, String str2){
+        if(str1.length() != str2.length()){
+            return false;
+        }
         char[] chars1 = str1.toCharArray();
         int comparePoint = str2.indexOf(chars1[0]);
         char[] chars2 = str2.toCharArray();
@@ -124,4 +127,20 @@ public class Exercises {
         }
         return input;
     }
+
+    // ------------------8-----------------
+    public boolean anagram(String input1, String input2){
+        if(input1.length() != input2.length()){
+            return false;
+        }
+
+        for(int i = 0; i < input1.length(); i++){
+            if(!input2.contains(Character.toString(input1.charAt(i)))){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
 }
