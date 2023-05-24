@@ -4,6 +4,7 @@ public class Main{
         String str = "Hello";
 
         // System.out.println(exe.numbersOfVowels(str));
-        System.out.println(exe.reverseString(str));
+        // System.out.println(exe.reverseString(str));
+        System.out.println(exe.reverseSentence("Trees are Beautiful"));
     }
 }

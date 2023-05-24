@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Exercises {
 
     // --------------1----------------
@@ -27,4 +29,18 @@ public class Exercises {
         return input;
     }
     
+    // --------------3----------------
+    public String reverseSentence(String input){
+        String[] strs = input.split(" ");
+        input = "";
+        for(int i = strs.length - 1; i >= 0; i--){
+            if(i == strs.length - 1){
+                input += strs[i];
+            }
+            else{
+                input = input + " " + strs[i];
+            }
+        }
+        return input;
+    }
 }
