@@ -143,4 +143,16 @@ public class Exercises {
         return true;
     }
 
+    // ------------------9-----------------
+    public boolean palindrome(String input){
+        var middle = (input.length() - 1) / 2;
+        var reverseIndex = input.length() - 1;
+        for(int i = 0; i <= middle; i++){
+            if(input.charAt(i) != input.charAt(reverseIndex)){
+                return false;
+            }
+            reverseIndex--;
+        }
+        return true;
+    }
 }
