@@ -1,4 +1,7 @@
+import java.util.Arrays;
 import java.util.HashMap;
+
+import javax.sound.sampled.SourceDataLine;
 
 public class Exercises {
 
@@ -75,6 +78,7 @@ public class Exercises {
         return newStr;
     }
 
+    // ------------------6-----------------
     public Character mostRepeated(String input){
         HashMap<Character, Integer> map = new HashMap<>();
         for(int i = 0; i < input.length(); i++){
@@ -90,5 +94,30 @@ public class Exercises {
             }
         }
         return res;
+    }
+
+    // ------------------7-----------------
+    public String capitalizeFirstLetter(String input){
+        String[] words = input.split(" ");
+        input = "";
+        int i = 0;
+        boolean isUpper = true;
+        while(i < words.length){
+            if(isUpper){
+                var temp = words[i].toUpperCase();
+                input += temp.charAt(0);
+                words[i] = words[i].substring(1);
+                isUpper = false;
+            }else{
+                if(i == words.length - 1){
+                    input += words[i];
+                }else{
+                    input += words[i] + " ";
+                }
+                i++;
+                isUpper = true;
+            }
+        }
+        return input;
     }
 }
