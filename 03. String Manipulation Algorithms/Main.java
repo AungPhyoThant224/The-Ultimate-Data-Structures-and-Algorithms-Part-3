@@ -7,6 +7,7 @@ public class Main{
         // System.out.println(exe.reverseString(str));
         // System.out.println(exe.reverseSentence("Trees are Beautiful"));
         // System.out.println(exe.rotationOfAnother("ABCD", "ADBC"));
-        System.out.println(exe.removeDuplicate(str));
+        // System.out.println(exe.removeDuplicate(str));
+        System.out.println(exe.mostRepeated(str));
     }
 }

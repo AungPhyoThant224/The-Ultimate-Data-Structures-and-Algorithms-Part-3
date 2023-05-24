@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.HashMap;
 
 public class Exercises {
 
@@ -73,5 +73,22 @@ public class Exercises {
             }
         }
         return newStr;
+    }
+
+    public Character mostRepeated(String input){
+        HashMap<Character, Integer> map = new HashMap<>();
+        for(int i = 0; i < input.length(); i++){
+            var word = input.charAt(i);
+            var value = map.get(word) == null ? 1 : map.get(word) + 1;
+            map.put(word, value);
+        }
+
+        char res = input.charAt(0);
+        for(var ch : map.keySet()){
+            if(map.get(ch) > map.get(res)){
+                res = ch;
+            }
+        }
+        return res;
     }
 }
