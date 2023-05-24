@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class BinarySearch {
     public int binarySearchRe(int[] arr, int trarget){
         // Arrays.sort(arr);

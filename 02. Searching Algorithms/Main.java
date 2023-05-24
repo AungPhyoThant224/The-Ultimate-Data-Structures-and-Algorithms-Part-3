@@ -13,7 +13,10 @@ public class Main{
         // TernarySearch search = new TernarySearch();
         // System.out.println(search.ternarySearch(nums, 5));
 
-        JumpSearch search = new JumpSearch();
-        System.out.println(search.jumpSearch(nums, 9));
+        // JumpSearch search = new JumpSearch();
+        // System.out.println(search.jumpSearch(nums, 9));
+
+        TernarySearch search = new TernarySearch();
+        System.out.println(search.ternarySearch(nums, 4));
     }
 }
