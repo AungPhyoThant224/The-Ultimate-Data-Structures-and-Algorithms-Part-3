@@ -7,6 +7,9 @@ public class Exercises {
 
     // --------------1----------------
     public int numbersOfVowels(String input){
+        if(input == null){
+            return 0;
+        }
         input = input.toLowerCase();
         char[] chars = input.toCharArray();
         int count = 0;
