@@ -27,12 +27,15 @@ public class Exercises {
 
     // --------------2----------------
     public String reverseString(String input){
-        char[] chars = input.toCharArray();
-        input = "";
-        for(int i = chars.length - 1; i >= 0; i--){
-            input += chars[i];
+        if(input == null){
+            return "";
         }
-        return input;
+
+        var reverseStr = new StringBuilder();
+        for(int i = input.length() - 1; i >= 0; i--){
+            reverseStr.append(input.charAt(i));
+        }
+        return reverseStr.toString();
     }
     
     // --------------3----------------
