@@ -125,7 +125,7 @@ public class Exercises {
         if(input == null){
             return "";
         }
-        
+
         StringBuilder str = new StringBuilder();
         Set<Character> set = new HashSet<>();
 
@@ -140,21 +140,48 @@ public class Exercises {
     }
 
     // ------------------6-----------------
-    public Character mostRepeated(String input){
-        HashMap<Character, Integer> map = new HashMap<>();
-        for(int i = 0; i < input.length(); i++){
-            var word = input.charAt(i);
-            var value = map.get(word) == null ? 1 : map.get(word) + 1;
-            map.put(word, value);
+    // public char mostRepeated(String input){
+    //     if(input == null){
+    //         throw new IllegalArgumentException();
+    //     }
+    //     HashMap<Character, Integer> map = new HashMap<>();
+    //     for(int i = 0; i < input.length(); i++){
+    //         var word = input.charAt(i);
+    //         var value = map.get(word) == null ? 1 : map.get(word) + 1;
+    //         map.put(word, value);
+    //     }
+
+    //     char res = input.charAt(0);
+    //     for(var ch : map.keySet()){
+    //         if(map.get(ch) > map.get(res)){
+    //             res = ch;
+    //         }
+    //     }
+    //     return res;
+    // }
+
+    //Mosh Solution 1
+    public char mostRepeated(String input){
+        if(input == null){
+            throw new IllegalArgumentException();
         }
 
-        char res = input.charAt(0);
-        for(var ch : map.keySet()){
-            if(map.get(ch) > map.get(res)){
-                res = ch;
+        final int ASCII_SIZE = 256;
+        int[] frequencies = new int[ASCII_SIZE];
+        for(var ch : input.toCharArray()){
+            frequencies[ch]++;
+        }
+
+        int max = 0;
+        char result = ' ';
+        for(int i = 0; i < frequencies.length; i++){
+            if(frequencies[i] > max){
+                max = frequencies[i];
+                result = (char) i;
             }
         }
-        return res;
+
+        return result;
     }
 
     // ------------------7-----------------
