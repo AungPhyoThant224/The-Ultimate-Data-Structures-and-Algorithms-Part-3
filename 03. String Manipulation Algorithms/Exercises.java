@@ -62,4 +62,16 @@ public class Exercises {
         
         return true;
     }
+
+    // ------------------5-----------------
+    public String removeDuplicate(String input){
+        String newStr = "";
+        for(int i = 0; i < input.length(); i++){
+            var word = String.valueOf(input.charAt(i));
+            if(!newStr.contains(word)){
+                newStr += word;
+            }
+        }
+        return newStr;
+    }
 }
