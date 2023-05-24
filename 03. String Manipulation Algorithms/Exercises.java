@@ -103,19 +103,23 @@ public class Exercises {
         int i = 0;
         boolean isUpper = true;
         while(i < words.length){
-            if(isUpper){
-                var temp = words[i].toUpperCase();
-                input += temp.charAt(0);
-                words[i] = words[i].substring(1);
-                isUpper = false;
-            }else{
-                if(i == words.length - 1){
-                    input += words[i];
+            if(words[i] != null && words[i] != "" && words[i] != " "){
+                if(isUpper){
+                    var temp = words[i].toUpperCase();
+                    input += temp.charAt(0);
+                    words[i] = words[i].substring(1);
+                    isUpper = false;
                 }else{
-                    input += words[i] + " ";
+                    if(i == words.length - 1){
+                        input += words[i];
+                    }else{
+                        input += words[i] + " ";
+                    }
+                    i++;
+                    isUpper = true;
                 }
+            }else{
                 i++;
-                isUpper = true;
             }
         }
         return input;
