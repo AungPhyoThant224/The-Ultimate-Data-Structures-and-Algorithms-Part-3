@@ -8,8 +8,6 @@ public class BinarySearch {
 
     private int binarySearchRe(int[] arr, int target, int left, int right){
         if(right < left){
-            System.out.println(left);
-            System.out.println(right);
             return -1;
         }
 
