@@ -10,7 +10,10 @@ public class Main{
         // System.out.println(search.binarySearchRe(nums, 1));
         // System.out.println(search.binarySearchIte(nums, 5));
 
-        TernarySearch search = new TernarySearch();
-        System.out.println(search.ternarySearch(nums, 5));
+        // TernarySearch search = new TernarySearch();
+        // System.out.println(search.ternarySearch(nums, 5));
+
+        JumpSearch search = new JumpSearch();
+        System.out.println(search.jumpSearch(nums, 9));
     }
 }
