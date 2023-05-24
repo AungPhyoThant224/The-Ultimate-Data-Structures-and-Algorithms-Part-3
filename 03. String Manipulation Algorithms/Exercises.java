@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 
 import javax.sound.sampled.SourceDataLine;
@@ -39,18 +40,25 @@ public class Exercises {
     }
     
     // --------------3----------------
+    // public String reverseSentence(String input){
+    //     String[] strs = input.trim().split(" ");
+    //     StringBuilder reverse = new StringBuilder();
+    //     for(int i = strs.length - 1; i >= 0; i--){
+    //         if(i == strs.length - 1){
+    //             reverse.append(strs[i]);
+    //         }
+    //         else{
+    //             reverse.append(" " + strs[i]);
+    //         }
+    //     }
+    //     return reverse.toString().trim();
+    // }
+
+    //Mosh Solution
     public String reverseSentence(String input){
-        String[] strs = input.split(" ");
-        input = "";
-        for(int i = strs.length - 1; i >= 0; i--){
-            if(i == strs.length - 1){
-                input += strs[i];
-            }
-            else{
-                input = input + " " + strs[i];
-            }
-        }
-        return input;
+        String[] strs = input.trim().split(" ");
+        Collections.reverse(Arrays.asList(strs));
+        return String.join(" ", strs);
     }
 
     // -------------------4------------------
