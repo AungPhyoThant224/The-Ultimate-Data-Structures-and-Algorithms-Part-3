@@ -43,4 +43,23 @@ public class Exercises {
         }
         return input;
     }
+
+    // -------------------4------------------
+    public boolean rotationOfAnother(String str1, String str2){
+        char[] chars1 = str1.toCharArray();
+        int comparePoint = str2.indexOf(chars1[0]);
+        char[] chars2 = str2.toCharArray();
+
+        for(int i = 0; i < chars1.length; i++){
+            if(chars1[i] != chars2[comparePoint]){
+                return false;
+            }
+            comparePoint++;
+            if(comparePoint == chars2.length){
+                comparePoint = 0;
+            }
+        }
+        
+        return true;
+    }
 }
