@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.sound.sampled.SourceDataLine;
 
@@ -41,6 +43,10 @@ public class Exercises {
     
     // --------------3----------------
     // public String reverseSentence(String input){
+    //     if(input == null){
+    //         return "";
+    //     }
+
     //     String[] strs = input.trim().split(" ");
     //     StringBuilder reverse = new StringBuilder();
     //     for(int i = strs.length - 1; i >= 0; i--){
@@ -56,6 +62,9 @@ public class Exercises {
 
     //Mosh Solution
     public String reverseSentence(String input){
+        if(input == null){
+            return "";
+        }
         String[] strs = input.trim().split(" ");
         Collections.reverse(Arrays.asList(strs));
         return String.join(" ", strs);
@@ -63,6 +72,10 @@ public class Exercises {
 
     // -------------------4------------------
     // public boolean rotationOfAnother(String str1, String str2){
+    //     if(str1 == null || str2 == null){
+    //         return false;
+    //     }
+        
     //     if(str1.length() != str2.length()){
     //         return false;
     //     }
@@ -92,15 +105,38 @@ public class Exercises {
     }
 
     // ------------------5-----------------
+    // public String removeDuplicate(String input){
+    //     if(input == null){
+    //         return "";
+    //     }
+    //     StringBuilder newStr = new StringBuilder();
+    //     for(int i = 0; i < input.length(); i++){
+    //         var word = String.valueOf(input.charAt(i));
+    //         if(!newStr.toString().contains(word)){
+    //             newStr.append(word);
+    //         }
+    //     }
+    //     return newStr.toString();
+    // }
+
+    //Mosh Solution
     public String removeDuplicate(String input){
-        String newStr = "";
-        for(int i = 0; i < input.length(); i++){
-            var word = String.valueOf(input.charAt(i));
-            if(!newStr.contains(word)){
-                newStr += word;
+
+        if(input == null){
+            return "";
+        }
+        
+        StringBuilder str = new StringBuilder();
+        Set<Character> set = new HashSet<>();
+
+        for(var ch : input.toCharArray()){
+            if(!set.contains(ch)){
+                set.add(ch);
+                str.append(ch);
             }
         }
-        return newStr;
+
+        return str.toString();
     }
 
     // ------------------6-----------------
