@@ -299,14 +299,42 @@ public class Exercises {
     }
 
     // ------------------9-----------------
+    // public boolean palindrome(String input){
+    //     if(input == null){
+    //         return false;
+    //     }
+    //     var middle = (input.length() - 1) / 2;
+    //     var reverseIndex = input.length() - 1;
+    //     for(int i = 0; i <= middle; i++){
+    //         if(input.charAt(i) != input.charAt(reverseIndex)){
+    //             return false;
+    //         }
+    //         reverseIndex--;
+    //     }
+    //     return true;
+    // }
+
+    // Mosh Solution 1
+    // public boolean palindrome(String input){
+    //     if(input == null){
+    //         return false;
+    //     }
+    //     var string = new StringBuilder(input);
+    //     return string.reverse().toString().equals(input);
+    // }
+
+    // Mosh Solution 2
     public boolean palindrome(String input){
-        var middle = (input.length() - 1) / 2;
-        var reverseIndex = input.length() - 1;
-        for(int i = 0; i <= middle; i++){
-            if(input.charAt(i) != input.charAt(reverseIndex)){
+        if(input == null){
+            return false;
+        }
+        var left = 0;
+        var right = input.length() - 1;
+
+        while(left < right){
+            if(input.charAt(left++) != input.charAt(right--)){
                 return false;
             }
-            reverseIndex--;
         }
         return true;
     }
