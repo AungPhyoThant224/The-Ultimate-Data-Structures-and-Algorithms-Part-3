@@ -272,6 +272,32 @@ public class Exercises {
         return Arrays.equals(array1, array2);
     }
 
+    // Mosh Solution (With Histogramming)
+    public boolean anagramHisto(String input1, String input2){
+        if(input1 == null || input2 == null){
+            return false;
+        }
+
+        final int ENGLISH_ALPHABET = 26;
+        int[] frequencies = new int[ENGLISH_ALPHABET]; 
+
+        input1 = input1.toLowerCase();
+        for (int i = 0; i < input1.length(); i++) {
+            frequencies[input1.charAt(i) - 'a']++;
+        }
+
+        input2 = input2.toLowerCase();
+        for (int i = 0; i < input2.length(); i++) {
+            var index = input2.charAt(i) - 'a';
+            if(frequencies[index] == 0){
+                return false;
+            }
+            frequencies[index]--;
+        }
+
+        return true;
+    }
+
     // ------------------9-----------------
     public boolean palindrome(String input){
         var middle = (input.length() - 1) / 2;

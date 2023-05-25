@@ -11,8 +11,8 @@ public class Main{
         // System.out.println(exe.mostRepeated(str));
         // System.out.println(exe.capitalizeFirstLetter(str));
         // System.out.println(exe.anagram("abcd", "bcade"));
-        System.out.println(exe.anagramSort("abcd", "bcaD"));
-        // System.out.println(exe.anagram("abcd", "bcade"));
+        // System.out.println(exe.anagramSort("abcd", "bcaD"));
+        System.out.println(exe.anagramHisto("abcd", "bcad"));
         // System.out.println(exe.palindrome("abcba"));
     }
 }
