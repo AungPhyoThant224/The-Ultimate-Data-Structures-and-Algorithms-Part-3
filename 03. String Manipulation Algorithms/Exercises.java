@@ -237,18 +237,39 @@ public class Exercises {
     }
 
     // ------------------8-----------------
-    public boolean anagram(String input1, String input2){
-        if(input1.length() != input2.length()){
+    // public boolean anagram(String input1, String input2){
+    //     if(input1 == null || input2 == null){
+    //         return false;
+    //     }
+
+    //     if(input1.length() != input2.length()){
+    //         return false;
+    //     }
+
+    //     input1 = input1.toLowerCase();
+    //     input2 = input2.toLowerCase();
+    //     for(int i = 0; i < input1.length(); i++){
+    //         if(!input2.contains(Character.toString(input1.charAt(i)))){
+    //             return false;
+    //         }
+    //     }
+
+    //     return true;
+    // }
+
+    // Mosh Solution (With Sort)
+    public boolean anagramSort(String input1, String input2){
+        if(input1 == null || input2 == null){
             return false;
         }
 
-        for(int i = 0; i < input1.length(); i++){
-            if(!input2.contains(Character.toString(input1.charAt(i)))){
-                return false;
-            }
-        }
+        var array1 = input1.toLowerCase().toCharArray();
+        Arrays.sort(array1);
 
-        return true;
+        var array2 = input2.toLowerCase().toCharArray();
+        Arrays.sort(array2);
+
+        return Arrays.equals(array1, array2);
     }
 
     // ------------------9-----------------

@@ -9,7 +9,9 @@ public class Main{
         // System.out.println(exe.rotationOfAnother("cabcd", "cdcab"));
         // System.out.println(exe.removeDuplicate(str));
         // System.out.println(exe.mostRepeated(str));
-        System.out.println(exe.capitalizeFirstLetter(str));
+        // System.out.println(exe.capitalizeFirstLetter(str));
+        // System.out.println(exe.anagram("abcd", "bcade"));
+        System.out.println(exe.anagramSort("abcd", "bcaD"));
         // System.out.println(exe.anagram("abcd", "bcade"));
         // System.out.println(exe.palindrome("abcba"));
     }
