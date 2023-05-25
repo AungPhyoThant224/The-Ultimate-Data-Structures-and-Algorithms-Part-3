@@ -160,7 +160,7 @@ public class Exercises {
     //     return res;
     // }
 
-    //Mosh Solution 1
+    //Mosh Solution
     public char mostRepeated(String input){
         if(input == null){
             throw new IllegalArgumentException();
@@ -185,32 +185,55 @@ public class Exercises {
     }
 
     // ------------------7-----------------
+    // public String capitalizeFirstLetter(String input){
+
+    //     if(input == null){
+    //         return "";
+    //     }
+    //     String[] words = input.split(" ");
+    //     input = "";
+    //     int i = 0;
+    //     boolean isUpper = true;
+    //     while(i < words.length){
+    //         if(words[i] != null && words[i] != "" && words[i] != " "){
+    //             if(isUpper){
+    //                 var temp = words[i].toUpperCase();
+    //                 input += temp.charAt(0);
+    //                 words[i] = words[i].substring(1).toLowerCase();
+    //                 isUpper = false;
+    //             }else{
+    //                 if(i == words.length - 1){
+    //                     input += words[i];
+    //                 }else{
+    //                     input += words[i] + " ";
+    //                 }
+    //                 i++;
+    //                 isUpper = true;
+    //             }
+    //         }else{
+    //             i++;
+    //         }
+    //     }
+    //     return input;
+    // }
+
+    // Mosh Solution
     public String capitalizeFirstLetter(String input){
-        String[] words = input.split(" ");
-        input = "";
-        int i = 0;
-        boolean isUpper = true;
-        while(i < words.length){
-            if(words[i] != null && words[i] != "" && words[i] != " "){
-                if(isUpper){
-                    var temp = words[i].toUpperCase();
-                    input += temp.charAt(0);
-                    words[i] = words[i].substring(1);
-                    isUpper = false;
-                }else{
-                    if(i == words.length - 1){
-                        input += words[i];
-                    }else{
-                        input += words[i] + " ";
-                    }
-                    i++;
-                    isUpper = true;
-                }
-            }else{
-                i++;
-            }
+
+        if(input == null || input.trim().isEmpty()){
+            return "";
         }
-        return input;
+
+        String[] words = input
+                        .trim()
+                        .replaceAll(" +", " ")
+                        .split(" ");
+        for(int i = 0; i < words.length; i++){
+            words[i] = words[i].substring(0, 1).toUpperCase()
+                        + words[i].substring(1).toLowerCase();
+        }
+
+        return String.join(" ", words);
     }
 
     // ------------------8-----------------
